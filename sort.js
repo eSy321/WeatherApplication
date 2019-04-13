@@ -16,7 +16,9 @@ new Sortable(sort, {
     onEnd: function (evt) {
         binContainer.style.display = 'none';
         binColorContainer.style.display = 'none';
-        remove();
+        if(binContainer.firstElementChild){
+            binContainer.removeChild(binContainer.firstElementChild);
+        }
     },
 });
 
@@ -25,6 +27,6 @@ new Sortable(binContainer, {
     animation: 150,
 });
 
-const remove = () => {
-    binContainer.removeChild(binContainer.firstElementChild);
-}
+// const remove = () => {
+//     binContainer.removeChild(binContainer.firstElementChild);
+// }
